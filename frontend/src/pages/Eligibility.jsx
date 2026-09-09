@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { submitLead } from "../services/api";
+import { trackLead } from "../utils/metaPixel";
 import { Link, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -165,21 +166,24 @@ export default function Eligibility() {
 
     try {
       await submitLead({
-        fullName: form.fullName.trim(),
-        age: Number(form.age),
+        fullName: form.fullName,
+        age: form.age,
         gender: form.gender,
-        city: form.city.trim(),
-        state: form.state.trim(),
+        city: form.city,
+        state: form.state,
         insuranceType: form.insuranceType,
         coverageFor: form.coverageFor,
         familyMembers: form.familyMembers,
         existingInsurance: form.existingInsurance,
         coverageAmount: form.coverageAmount,
-        phone: form.phone.trim(),
-        email: form.email.trim().toLowerCase(),
+        phone: form.phone,
+        email: form.email,
         preferredContact: form.preferredContact,
-        source: "eligibility",
+        message: form.message,
       });
+
+      // Track only successful submissions
+      trackLead();
 
       navigate("/thank-you");
     } catch (error) {
