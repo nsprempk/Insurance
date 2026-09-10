@@ -9,6 +9,9 @@ import Eligibility from "./pages/Eligibility";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
+import Disclaimer from "./pages/Disclaimer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
@@ -28,6 +31,9 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="disclaimer" element={<Disclaimer />} />
+          <Route path="terms" element={<PrivacyPolicy />} />
+          <Route path="privacy-policy" element={<Terms />} />
         </Route>
 
         {/* ================================
