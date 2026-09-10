@@ -64,7 +64,7 @@ export default function AdminLogin() {
             <p className="text-sm font-bold text-blue-600">Ontario Inc</p>
 
             <h1 className="mt-2 text-3xl font-bold text-slate-950">
-              Admin Login
+              Admin Login | Ontario Inc.
             </h1>
 
             <p className="mt-2 text-sm text-slate-500">
